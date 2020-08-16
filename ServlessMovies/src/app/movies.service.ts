@@ -10,7 +10,6 @@ export class MoviesService {
   
 
 getMovies() {
- return fetch('http://localhost:7071/api/GetMovies').then(data => data.json());
+ return fetch('api/GetMovies').then(data => data.json());
     }
-  
 }
