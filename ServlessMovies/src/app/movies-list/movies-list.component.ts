@@ -9,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class MoviesListComponent implements OnInit {
 
   movies: any;
+  currentUser: any;
+  
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
 this.moviesService.getMovies().then(data => this.movies = data);
+this.moviesService.getCurrentUser().then(data => this.currentUser = data && data.userDetails);
   }
 
 }
